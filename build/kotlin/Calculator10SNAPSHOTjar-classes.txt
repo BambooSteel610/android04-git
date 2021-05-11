@@ -1,0 +1,1 @@
+C:\Users\admin\IdeaProjects\Calculator\build\classes\kotlin\main\MainKt$main$result$1.class;C:\Users\admin\IdeaProjects\Calculator\build\classes\kotlin\main\MainKt.class
