@@ -20,8 +20,8 @@ fun output(inputNumbers: List<Int>){
 
 fun calculator(function: (List<Int>) -> Double, numberArg:List<Int>) = function(numberArg)
 
-fun add(numbers:List<Int>):Double{
-    var sum = 0
-    numbers.forEach{sum += it}
-    return sum.toDouble()
+fun minus(numbers:List<Int>):Double{
+    var minus = 0
+    numbers.forEach{minus -=it }
+    return minus.toDouble()                                
 }
