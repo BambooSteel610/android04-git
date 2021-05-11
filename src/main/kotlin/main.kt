@@ -25,3 +25,15 @@ fun add(numbers:List<Int>):Double{
     numbers.forEach{sum += it}
     return sum.toDouble()
 }
+
+fun multi(numbers: List<Int>): Int {
+    var result = 1
+    if (!numbers.isEmpty()) {
+        numbers.forEach {
+            result *= it
+        }
+    } else {
+        result = 0
+    }
+    return result
+}
