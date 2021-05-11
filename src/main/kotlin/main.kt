@@ -1,36 +1,41 @@
+import jdk.nashorn.internal.runtime.ScriptingFunctions.readLine
 import java.lang.Exception
+import java.sql.DriverManager
 
 const val errNoNumber = "please input only numbers separated with space"
 fun main() {
     val inputNumbers = input()
     if(inputNumbers != null) output(inputNumbers)
 }
-fun input(): List<Int>? {
+fun input(): Double? {
     return try {
-        readLine()?.split(" ")?.map { it.toInt() }
+        print("Logarit Nepe of: ")
+        readLine()?.toDouble()
     } catch (e: Exception) {
         println(errNoNumber)
         return null
     }
 }
-fun output(inputNumbers: List<Int>){
-    val resultAdd = calculator(::add, inputNumbers)
-    println("add result: $resultAdd")
+
+
+
+fun output(inputNumbers: Double){
+    val Ln = calculator(::LogaritNepe, inputNumbers)
+    println("Logarit nepe result: $Ln")
 }
 
-fun calculator(function: (List<Int>) -> Double, numberArg:List<Int>) = function(numberArg)
+fun calculator(function: (Double) -> Double, numberArg:Double) = function(numberArg)
 
-fun LogaritNepe(n:Int):Double{
+fun LogaritNepe(n:Double):Double{
     var sum:Double = 0.0
-    var base:Double = 0.0
-    var divisor:Double = 0.0
-    var pow:Double = 0.0
-    base = ((n-1) / (n+1)).toDouble()
+    println("N: $n");
+    var base = ((n-1) .div (n+1))
+    println("base: $base");
     for(i in 1..10000){
-        divisor = ((2 * i) - 1).toDouble()
-        pow = Math.pow(base,divisor)
-        pow = pow / divisor
-        sum = sum + pow
+        var divisor = ((2 * i) - 1).toDouble()
+        var pow:Double = Math.pow(base,divisor)
+        pow = pow .div(divisor)
+        sum = sum.plus(pow)
     }
     return 2*sum
 }
